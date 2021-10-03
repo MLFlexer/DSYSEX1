@@ -1,0 +1,24 @@
+
+syntax = "proto3";
+
+
+package ituserver;
+
+service Cources {
+    rpc GetCourses (CourseRequest) returns (CourseReply) {}
+}
+
+message CourseRequest {
+    string id = 1;
+}
+
+message CourseReply {
+    string id = 1;
+    string name = 2;
+    string teacher = 3;
+    string courseManager = 4;
+    int32 numParticipants = 5;
+    string semester = 6;
+    float ECTS = 7;
+    string programmingLang = 8;
+}
