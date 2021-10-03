@@ -1,6 +1,7 @@
 
 syntax = "proto3";
 
+option go_package = "https://github.com/MLFlexer/DSYSEX1/tree/main/ituserver/ituserver";
 
 package ituserver;
 
