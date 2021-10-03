@@ -7,7 +7,7 @@ import (
 
 	"google.golang.org/grpc"
 
-	pb "github.com/MLFlexer/DSYSEX1/tree/main/ituserver/ituserver"
+	pb "Proto"
 )
 
 const (
@@ -37,7 +37,7 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 	s := grpc.NewServer()
-	pb.RegisterCoursesServer(s, &server{})
+	pb.RegisterCourcesServer(s, &server{})
 	log.Printf("server listening at %v", lis.Addr())
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)

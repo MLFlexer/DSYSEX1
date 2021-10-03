@@ -1,15 +1,17 @@
 package main
 
 import (
+	pb "Proto"
 	"context"
+	"fmt"
 	"log"
-	"net"
+	"time"
+
 	"google.golang.org/grpc"
-	pb "https://github.com/MLFlexer/DSYSEX1/tree/main/ituserver/ituserver"
 )
 
 const (
-	address = "localhost:8080"
+	address   = "localhost:8080"
 	defaultId = "BSDISYS1KU"
 )
 
@@ -20,7 +22,7 @@ func main() {
 		log.Fatalf("did not connect: %v", err)
 	}
 	defer conn.Close()
-	c := pb.NewCoursesClient(conn)
+	c := pb.NewCourcesClient(conn)
 
 	// Contact the server and print out its response.
 	id := defaultId
@@ -31,5 +33,11 @@ func main() {
 	if err != nil {
 		log.Fatalf("could not get course: %v", err)
 	}
-	log.Printf("course: %s", r.GetMessage())
+	log.Printf("Course id: %s", r.GetId())
+	log.Printf("Course name: %s", r.GetName())
+	log.Printf("Course Manager: %s", r.GetCourseManager())
+	log.Printf("Course programming language: %s", r.GetProgrammingLang())
+	log.Printf("Course semester: %s", r.GetSemester())
+	log.Printf("Course ECTS: %s", fmt.Sprintf("%f", r.GetECTS()))
+	log.Printf("Number of participants: %s", fmt.Sprint(r.GetNumParticipants()))
 }
