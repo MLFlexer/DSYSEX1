@@ -1,9 +1,9 @@
 
 syntax = "proto3";
 
-option go_package = "github.com/MLFlexer/DSYSEX1/tree/main/ituserver/ituserver";
+option go_package = "github.com/MLFlexer/DSYSEX1/tree/main/gRPC/Proto";
 
-package ituserver;
+package gRPC;
 
 service Cources {
     rpc GetCourses (CourseRequest) returns (CourseReply) {}
