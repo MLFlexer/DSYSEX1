@@ -1,0 +1,20 @@
+[{
+    "studentid":"caap",
+    "teacherid": "maca",
+    "rating":   10
+},
+{
+    "studentid":"caap",
+    "teacherid": "agpr",
+    "rating":   10
+},
+{
+    "studentid":"jbia",
+    "teacherid": "agpr",
+    "rating":   8
+},
+{
+    "studentid":"malla",
+    "teacherid": "maca",
+    "rating":   9
+}]
