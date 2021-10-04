@@ -1,6 +1,8 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
 	r := gin.Default()
@@ -25,14 +27,6 @@ func getStudent(c *gin.Context) {
 }
 
 func getCourse(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"id":              "BSDISYS1KU",
-		"name":            "Distributed Systems, BSc",
-		"teacher":         "Agata Przybyszewska",
-		"courseManager":   "Marco Carbone",
-		"numParticipants": "195",
-		"semester":        "Autum 2021",
-		"ECTS":            "7.5",
-		"programmingLang": "GoLang",
-	})
+	courses := Data.readCourses()
+	c.JSON(200, courses.Courses)
 }

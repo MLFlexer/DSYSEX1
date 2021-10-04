@@ -1,11 +1,10 @@
-package main
+package Data
 
 import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"os"
-	"strconv"
 )
 
 type Students struct {
@@ -76,13 +75,12 @@ type CourseRating struct {
 	Rating    int    `json:"rating"`
 }
 
-func main() {
+func readCourses() Courses {
 
 	jsonFile, err := os.Open("Data/database.json")
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println("Hey that's a pretty cool file")
 
 	defer jsonFile.Close()
 
@@ -92,9 +90,5 @@ func main() {
 
 	json.Unmarshal([]byte(byteValue), &courses)
 
-	for i := 0; i < len(courses.Courses); i++ {
-		fmt.Println("Course Code: " + courses.Courses[i].Id)
-		fmt.Println("Course Name: " + courses.Courses[i].Name)
-		fmt.Println("Number of Participants: " + strconv.Itoa(courses.Courses[i].NumParticipants))
-	}
+	return courses
 }
