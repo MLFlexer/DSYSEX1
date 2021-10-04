@@ -1,0 +1,80 @@
+{
+    "students":[{
+        "id":   "caap",
+        "name": "Casper Anton Poulsen"
+    },
+    {
+        "id":   "jbia",
+        "name": "Jens Birk Andersen"
+    },
+    {
+        "id":   "malla",
+        "name": "Malthe Mathias Mølgaard Larsen"
+    }],
+    "courses":[{
+        "id":              "BSDISYS1KU",
+        "name":            "Distributed Systems, BSc",
+        "numparticipants": 195,
+        "semester":        "Autum 2021",
+        "ECTS":            7.5,
+        "programmingLang": "GoLang" 
+    }],
+    "teachers":[{
+        "id":   "agpr",
+        "name": "Agata Przybyszewska"
+    },
+    {
+        "id":   "maca",
+        "name": "Marco Carbone"
+    }],
+    "enrollments":[{
+        "studentid": "caap",
+        "courseid":  "BSDISYS1KU"
+    },
+    {
+        "studentid": "malla",
+        "courseid":  "BSDISYS1KU"
+    },
+    {
+        "studentid": "jbia",
+        "courseid":  "BSDISYS1KU"
+    }],
+    "teachings":[{
+        "teacherid": "agpr",
+        "courseid":  "BSDISYS1KU"
+    },
+    {
+        "teacherid": "maca",
+        "courseid":  "BSDISYS1KU"
+    }],
+    "courseratings":[{
+        "studentid":"caap",
+        "courseid": "BSDISYS1KU",
+        "rating":   8
+    },
+    {
+        "studentid":"malla",
+        "courseid": "BSDISYS1KU",
+        "rating":   9
+    }],
+    "teacherratings":[{
+        "studentid":"caap",
+        "teacherid": "maca",
+        "rating":   10
+    },
+    {
+        "studentid":"caap",
+        "teacherid": "agpr",
+        "rating":   10
+    },
+    {
+        "studentid":"jbia",
+        "teacherid": "agpr",
+        "rating":   8
+    },
+    {
+        "studentid":"malla",
+        "teacherid": "maca",
+        "rating":   9
+    }]
+}
