@@ -7,7 +7,7 @@ import (
 
 	"google.golang.org/grpc"
 
-	pb "github.com/MLFlexer/DSYSEX1/gRPC/Proto"
+	pb "gRPC/Proto"
 )
 
 const (

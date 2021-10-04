@@ -1,13 +1,14 @@
 package main
 
 import (
-	pb "Proto"
 	"context"
 	"fmt"
 	"log"
 	"time"
 
 	"google.golang.org/grpc"
+
+	pb "gRPC/Proto"
 )
 
 const (
