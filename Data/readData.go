@@ -75,7 +75,7 @@ type CourseRating struct {
 	Rating    int    `json:"rating"`
 }
 
-func readCourses() Courses {
+func ReadCourses() Courses {
 
 	jsonFile, err := os.Open("Data/database.json")
 	if err != nil {

@@ -2,6 +2,8 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+
+	"github.com/MLFlexer/DSYSEX1/Data"
 )
 
 func main() {
@@ -27,6 +29,6 @@ func getStudent(c *gin.Context) {
 }
 
 func getCourse(c *gin.Context) {
-	courses := Data.readCourses()
+	courses := Data.ReadCourses()
 	c.JSON(200, courses.Courses)
 }
