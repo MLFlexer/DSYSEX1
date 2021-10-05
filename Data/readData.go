@@ -92,3 +92,37 @@ func ReadCourses() Courses {
 
 	return courses
 }
+
+func ReadStudents() Students {
+	jsonFile, err := os.Open("Data/database.json")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	defer jsonFile.Close()
+
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+
+	var students Students
+
+	json.Unmarshal([]byte(byteValue), &students)
+
+	return students
+}
+
+func ReadTeachers() Teachers {
+	jsonFile, err := os.Open("Data/database.json")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	defer jsonFile.Close()
+
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+
+	var teachers Teachers
+
+	json.Unmarshal([]byte(byteValue), &teachers)
+
+	return teachers
+}

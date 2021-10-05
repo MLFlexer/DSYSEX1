@@ -6,30 +6,27 @@ import (
 	"net/http"
 )
 
-type Course struct {
-	id              string
-	name            string
-	teacher         string
-	courseManager   string
-	numParticipants int
-	ECTS            float64
-	programmingLang string
+func main() {
+	fmt.Print("Courses \n")
+	fmt.Print(requestGetList("http://localhost:8080/course"))
+	fmt.Print("\n")
+	fmt.Print("Students \n")
+	fmt.Print(requestGetList("http://localhost:8080/student"))
+	fmt.Print("\n")
+	fmt.Print("Teachers \n")
+	fmt.Print(requestGetList("http://localhost:8080/teacher"))
+	fmt.Print("\n")
 }
 
-func main() {
-	r, error := http.Get("http://localhost:8080/course")
+func requestGetList(url string) string {
+	r, error := http.Get(url)
 	if error != nil {
 		fmt.Println("Error: ", error)
 	}
-	/*
-			err := json.NewDecoder(r.Body).Decode(&c)
-		    if err != nil {
-		        http.Error(w, err.Error(), http.StatusBadRequest)
-		        return
-		    }
-	*/
+
 	defer r.Body.Close()
 	body, _ := io.ReadAll(r.Body)
 	myString := string(body[:])
-	fmt.Print(myString)
+
+	return myString
 }

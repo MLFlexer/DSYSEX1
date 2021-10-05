@@ -15,17 +15,13 @@ func main() {
 }
 
 func getTeacher(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"name": "Marco Polo",
-		"id":   "007",
-	})
+	teachers := Data.ReadTeachers()
+	c.JSON(200, teachers.Teachers)
 }
 
 func getStudent(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"name": "Lars Larsen",
-		"id":   "000001",
-	})
+	students := Data.ReadStudents()
+	c.JSON(200, students.Students)
 }
 
 func getCourse(c *gin.Context) {
